@@ -12,7 +12,10 @@ class ViewMentors extends StatefulWidget {
 class _ViewMentorsState extends State<ViewMentors> {
   Future<void> removeMentor(String uid) async {
     setState(() {
-      FirebaseFirestore.instance.collection('mentors').doc(uid).delete();
+      FirebaseFirestore.instance
+          .collection('mentors')
+          .doc(uid.toString())
+          .delete();
     });
   }
 
@@ -27,7 +30,7 @@ class _ViewMentorsState extends State<ViewMentors> {
         // Create a Mentor object from the fetched data
         Mentor mentor = Mentor(
           email: data['email'] ?? '',
-          uid: data['user_id'] ?? '',
+          uid: data['uid'] ?? '',
         );
         mentors.add(mentor);
       }
