@@ -142,7 +142,7 @@ class _HomePageState extends State<HomePage> {
       int score = 0;
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-          builder: (context) => UserDashboard(),
+          builder: (context) => HomePages(),
         ),
       );
     }
@@ -153,7 +153,7 @@ class _HomePageState extends State<HomePage> {
         int score = 0;
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(
-            builder: (context) => UserDashboard(),
+            builder: (context) => HomePages(),
           ),
         );
       } else {

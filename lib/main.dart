@@ -19,7 +19,6 @@ class MyApp extends StatelessWidget {
         title: '3.2 Flutter Push Pop',
         theme: ThemeData.light(),
         home: LoginPage()
-
         //home: MyForm()
         );
   }

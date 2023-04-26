@@ -73,6 +73,7 @@ class _ChatInitPageState extends State<UserChatPage> {
                 setState(() {
                   _closeChat();
                 });
+                
               } else if (value == 'sendWarning') {}
             },
             itemBuilder: (BuildContext context) => [

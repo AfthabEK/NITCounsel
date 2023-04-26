@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nitcsupport/userScreens/view_req_user.dart';
 import '../widgets/my_filter_chip.dart';
 import '../widgets/filter_chip_data.dart';
 import 'user_dashboard.dart';
@@ -167,6 +168,11 @@ class _MyFormState extends State<MyForm> {
         String title = _productController.text;
         String user_id = FirebaseAuth.instance.currentUser!.uid;
         createChatRequest(user_id, title, description, tags);
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => HomePage(),
+          ),
+        );
       },
       child: Text(
         "Create Chat Request".toUpperCase(),

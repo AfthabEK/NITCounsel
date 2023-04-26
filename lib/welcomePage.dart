@@ -26,13 +26,15 @@ class _LoginPageState extends State<LoginPage> {
         child: Container(
           decoration: BoxDecoration(
               gradient: LinearGradient(
-            begin: Alignment.topRight,
-            end: Alignment.bottomLeft,
-            colors: [
-              const Color(0xFF32526C),
-              Colors.lightBlue.shade200,
-            ],
-          )),
+                begin: Alignment.topRight,
+                end: Alignment.bottomLeft,
+                colors: [
+                  const Color(0xFF32526C),
+                  Colors.lightBlue.shade200,
+
+                ],
+              )
+          ),
           child: Column(
             children: [
               SizedBox(
@@ -46,8 +48,7 @@ class _LoginPageState extends State<LoginPage> {
                   children: [
                     Text(
                       "Welcome to NITCSupport",
-                      style: GoogleFonts.plusJakartaSans(
-                          fontSize: 24, color: Colors.black),
+                      style: GoogleFonts.plusJakartaSans(fontSize: 24, color: Colors.black),
                     ),
                     SizedBox(
                       height: 60,
@@ -91,7 +92,7 @@ class _LoginPageState extends State<LoginPage> {
                         },
                         child: Text(
                           "Login as mentor",
-                          style: TextStyle(fontSize: 15, color: Colors.black),
+                          style: TextStyle(fontSize:15,color: Colors.black),
                         ),
                       ),
                       TextButton(
@@ -104,14 +105,13 @@ class _LoginPageState extends State<LoginPage> {
                           },
                           child: Text(
                             "SGC Login",
-                            style: TextStyle(fontSize: 15, color: Colors.black),
+                            style: TextStyle(fontSize:15,color: Colors.black),
                           ))
                     ]),
               ),
             ],
           ),
-        ),
-      ),
+        ),),
     );
   }
 }
