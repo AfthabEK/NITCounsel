@@ -23,6 +23,7 @@ Future<void> addMentor(
       'email': email,
       'tags': tags,
       'availability': availability,
+      'uid': userCredential.user!.uid,
     });
   } catch (e) {
     // Handle any errors
