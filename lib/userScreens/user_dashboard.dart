@@ -3,6 +3,7 @@ import 'package:nitcsupport/userScreens/create_chatreq.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'view_req_user.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 class HomePages extends StatelessWidget {
   const HomePages({Key? key}) : super(key: key);
@@ -107,12 +108,12 @@ class _HomePageState extends State<HomePage> {
             },
             icon: pageIndex == 1
                 ? const Icon(
-              Icons.add_comment_outlined,
+              Icons.add_comment,
               color: Colors.white,
               size: 35,
             )
                 : const Icon(
-              Icons.add_comment,
+              Icons.add_comment_outlined,
               color: Colors.white,
               size: 35,
             ),
@@ -215,17 +216,89 @@ class Page4 extends StatelessWidget {
         title: const Text('Self help content'),
         backgroundColor: const Color(0xFF32526C),
       ),
+
       body: Center(
         child: ListView(
           children: [
-            Image.asset('lib/images/self1.jpg',
-              width: 600.0,
-              height: 240.0,
-              fit: BoxFit.cover,),
-            Image.asset('lib/images/self2.jpg',
-              width: 600.0,
-              height: 240.0,
-              fit: BoxFit.cover,),
+            CarouselSlider(
+              items: [
+
+                //1st Image of Slider
+                Container(
+                  margin: EdgeInsets.all(6.0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8.0),
+                    color: const Color(0xFF32526C),
+                    image: DecorationImage(
+                      image: NetworkImage("https://th.bing.com/th/id/OIP.S7bBWFirlQiKyDGiYzOnLwHaFh?pid=ImgDet&rs=1"),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+
+                //2nd Image of Slider
+                Container(
+                  margin: EdgeInsets.all(6.0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8.0),
+                    image: DecorationImage(
+                      image: NetworkImage("https://quotefancy.com/media/wallpaper/3840x2160/9844-Friedrich-Nietzsche-Quote-You-have-your-way-I-have-my-way-As-for.jpg"),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+
+                //3rd Image of Slider
+                Container(
+                  margin: EdgeInsets.all(6.0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8.0),
+                    image: DecorationImage(
+                      image: NetworkImage("https://quotefancy.com/media/wallpaper/3840x2160/6297157-Mike-Moreno-Quote-Just-remember-you-are-not-alone-in-fact-you-are.jpg"),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+
+                //4th Image of Slider
+                // Container(
+                //   margin: EdgeInsets.all(6.0),
+                //   decoration: BoxDecoration(
+                //     borderRadius: BorderRadius.circular(8.0),
+                //     image: DecorationImage(
+                //       image: NetworkImage("ADD IMAGE URL HERE"),
+                //       fit: BoxFit.cover,
+                //     ),
+                //   ),
+                // ),
+
+                //5th Image of Slider
+                // Container(
+                //   margin: EdgeInsets.all(6.0),
+                //   decoration: BoxDecoration(
+                //     borderRadius: BorderRadius.circular(8.0),
+                //     image: DecorationImage(
+                //       image: NetworkImage("ADD IMAGE URL HERE"),
+                //       fit: BoxFit.cover,
+                //     ),
+                //   ),
+                // ),
+
+              ],
+
+              //Slider Container properties
+              options: CarouselOptions(
+                height: 240.0,
+                enlargeCenterPage: true,
+                autoPlay: true,
+                aspectRatio: 30 / 9,
+                autoPlayCurve: Curves.fastOutSlowIn,
+                enableInfiniteScroll: true,
+                autoPlayAnimationDuration: Duration(milliseconds: 500),
+                viewportFraction: 0.8,
+
+              ),
+            ),
           ],
 
         ),

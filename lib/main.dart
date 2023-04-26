@@ -22,9 +22,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: '3.2 Flutter Push Pop',
         theme: ThemeData.light(),
-        //home: LoginPage());
+        home: LoginPage());
         //home: MyForm()
         //home: FeedbackPage(mentorUid: "123"));
-        home: Feedbacknew(mentorUid: "123"));
+        //home: Feedbacknew(mentorUid: "123"));
   }
 }
