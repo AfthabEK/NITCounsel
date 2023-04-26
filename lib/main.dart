@@ -1,5 +1,9 @@
+import 'package:nitcsupport/userScreens/create_chatreq.dart';
+
 import 'welcomePage.dart';
 import 'package:flutter/material.dart';
+import 'userScreens/give_feedback.dart';
+import 'userScreens/feedback_input.dart';
 
 import 'package:firebase_core/firebase_core.dart';
 
@@ -18,8 +22,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: '3.2 Flutter Push Pop',
         theme: ThemeData.light(),
-        home: LoginPage()
+        //home: LoginPage());
         //home: MyForm()
-        );
+        //home: FeedbackPage(mentorUid: "123"));
+        home: Feedbacknew(mentorUid: "123"));
   }
 }
