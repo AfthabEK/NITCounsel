@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "535254854034",
+    "project_id": "nitcsupport-f0b52",
+    "storage_bucket": "nitcsupport-f0b52.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:535254854034:android:5834ef42ed9fa68d36394b",
+        "android_client_info": {
+          "package_name": "com.example.nitcsupport"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "535254854034-af4c0s0vvub3i1mcntdip0bd9cfvq8q8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNJm8qAULzMpoQixX0yS5LJ3miJIecUik"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "535254854034-af4c0s0vvub3i1mcntdip0bd9cfvq8q8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
