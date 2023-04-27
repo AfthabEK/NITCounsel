@@ -52,6 +52,7 @@ class _ChatRequestListScreenState extends State<ChatRequestListScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Chat Requests'),
+        backgroundColor: Color(0xFF32526C),
       ),
       body: ListView.builder(
         itemCount: chatRequests.length,

@@ -47,16 +47,7 @@ class _MyFormState extends State<MyForm> {
               letterSpacing: 1,
             ),
           ),
-          leading: IconButton(
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-            icon: Icon(
-              Icons.arrow_back_ios,
-              color: Colors.black,
-              size: 30,
-            ),
-          ),
+
           centerTitle: true,
           elevation: 0,
         ),

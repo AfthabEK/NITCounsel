@@ -63,26 +63,17 @@ class _ViewReqUserState extends State<ViewReqUser> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Color(0xFF32526C),
         title: Text(
           "View Chat Requests",
           style: TextStyle(
-            color: Colors.black,
+            color: Colors.white,
             fontSize: 22,
             fontWeight: FontWeight.w600,
             letterSpacing: 1,
           ),
         ),
-        leading: IconButton(
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-          icon: Icon(
-            Icons.arrow_back_ios,
-            color: Colors.black,
-            size: 30,
-          ),
-        ),
+
         centerTitle: true,
         elevation: 0,
       ),

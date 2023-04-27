@@ -19,7 +19,7 @@ class MyTextPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Text(
-          "View Chat Request",
+          "View Feedback",
           style: TextStyle(
             color: Colors.black,
             fontSize: 22,
