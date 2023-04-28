@@ -6,8 +6,10 @@ import 'package:nitcsupport/welcomePage.dart';
 
 class Feedbacknew extends StatefulWidget {
   final String mentorUid;
+  int flag;
 
-  Feedbacknew({Key? key, required this.mentorUid}) : super(key: key);
+  Feedbacknew({Key? key, required this.mentorUid, required this.flag})
+      : super(key: key);
 
   @override
   _FeedbackState createState() => _FeedbackState();

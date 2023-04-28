@@ -137,49 +137,38 @@ class _HomePageState extends State<HomePage> {
     select_index = -1;
     if (score > 5) {
       signInAnonymously();
-      int index = 0;
-      bool isPressed = false;
-      int score = 0;
-      Navigator.of(context).pushReplacement(
+      setState(() {
+        index = 0;
+        isPressed = false;
+        score = 0;
+      });
+
+      Navigator.of(context).push(
         MaterialPageRoute(
           builder: (context) => HomePages(),
         ),
       );
-    }
-    if (index == _questions.length - 1) {
-      if (score > 5) {
-        int index = 0;
-        bool isPressed = false;
-        int score = 0;
-        Navigator.of(context).pushReplacement(
-          MaterialPageRoute(
-            builder: (context) => HomePages(),
-          ),
-        );
-      } else {
-        setState(() {
-          int index = 0;
-          bool isPressed = false;
-          int score = 0;
-        });
-
-        Navigator.pop(context);
-      }
-    }
-    ;
-    if (isPressed) {
-      setState(() {
-        if (index < _questions.length - 1) {
-          index++;
-          isPressed = false;
-        }
-      });
     } else {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: Text('Please select an option'),
-        behavior: SnackBarBehavior.floating,
-        margin: EdgeInsets.symmetric(vertical: 20.0),
-      ));
+      if (index == _questions.length - 1) {
+        {
+          StartAgain();
+        }
+      }
+
+      if (isPressed) {
+        setState(() {
+          if (index < _questions.length - 1) {
+            index++;
+            isPressed = false;
+          }
+        });
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text('Please select an option'),
+          behavior: SnackBarBehavior.floating,
+          margin: EdgeInsets.symmetric(vertical: 20.0),
+        ));
+      }
     }
   }
 
@@ -279,16 +268,4 @@ Future<void> signInAnonymously() async {
 
 // ...
 
-Future<void> storeUsername(String userId, String username) async {
-  try {
-    await FirebaseFirestore.instance.collection('users').doc(userId).set({
-      'username': username,
-      // Add any other user information you want to store in the document
-    });
-    user = username;
-    // Username and other user information is stored in Firestore with the document ID as the user ID
-  } catch (e) {
-    // Handle any errors that may occur while storing the username
-    print('Failed to store username: $e');
-  }
-}
+

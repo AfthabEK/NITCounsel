@@ -64,61 +64,65 @@ class _ChatRequestListScreenState extends State<ChatRequestListScreen> {
               FirebaseAuth.instance.currentUser!.uid.toString();
 
           bool isPending = chatRequest.status == 'pending';
+          bool isClosed = chatRequest.status == 'closed';
 
-          return Column(
-            children: [
-              ListTile(
-                title: Text('Title: ${chatRequest.title}'),
-                subtitle: Text('Tags: ${chatRequest.tags.join(', ')}\n'
-                    'Description: ${chatRequest.description}\n'
-                    'Created At: ${chatRequest.createdAt.toString()}'),
-                //trailing: Text('acceptedby: ${chatRequest.acceptedby}'),
-                // Set tile coreateSlor to green if accepted by the same mentor
-                //tileColor: isAcceptedByMentor ? Colors.green : null,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: isAcceptedByMentor
-                    ? [
-                        ElevatedButton(
-                          onPressed: () {
-                            // Naviagate to ChatPage
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => ChatInitPage(
-                                  id: chatRequest.user_id.toString(),
+          if (isPending || (isAcceptedByMentor && !isClosed))
+            return Column(
+              // show only  pending chats
+
+              children: [
+                ListTile(
+                  title: Text('Title: ${chatRequest.title}'),
+                  subtitle: Text('Tags: ${chatRequest.tags.join(', ')}\n'
+                      'Description: ${chatRequest.description}\n'
+                      'Created At: ${chatRequest.createdAt.toString()}'),
+                  //trailing: Text('acceptedby: ${chatRequest.acceptedby}'),
+                  // Set tile coreateSlor to green if accepted by the same mentor
+                  //tileColor: isAcceptedByMentor ? Colors.green : null,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: isAcceptedByMentor
+                      ? [
+                          ElevatedButton(
+                            onPressed: () {
+                              // Naviagate to ChatPage
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ChatInitPage(
+                                    id: chatRequest.user_id.toString(),
+                                  ),
                                 ),
-                              ),
-                            );
-                          },
-                          child: Text('Chat'),
-                          //change backgroundcolor to green
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.green,
+                              );
+                            },
+                            child: Text('Chat'),
+                            //change backgroundcolor to green
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.green,
+                            ),
                           ),
-                        ),
-                      ]
-                    : [
-                        ElevatedButton(
-                          onPressed: () {
-                            // Accept button callback
-                            _acceptChatRequest(context, chatRequest);
-                            //navigate to chatinitpage
-                          },
-                          child: Text('Accept'),
-                        ),
-                        ElevatedButton(
-                          onPressed: () {
-                            // Reject button callback
-                          },
-                          child: Text('Reject'),
-                        ),
-                      ],
-              ),
-              Divider(),
-            ],
-          );
+                        ]
+                      : [
+                          ElevatedButton(
+                            onPressed: () {
+                              // Accept button callback
+                              _acceptChatRequest(context, chatRequest);
+                              //navigate to chatinitpage
+                            },
+                            child: Text('Accept'),
+                          ),
+                          ElevatedButton(
+                            onPressed: () {
+                              // Reject button callback
+                            },
+                            child: Text('Reject'),
+                          ),
+                        ],
+                ),
+                Divider(),
+              ],
+            );
         },
       ),
     );

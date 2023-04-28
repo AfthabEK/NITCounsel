@@ -72,7 +72,13 @@ class _ViewMentorsState extends State<ViewMentors> {
                           ElevatedButton(
                             onPressed: () {
                               // Handle view feedback button click
-                              ViewFeedback(muid: mentors[index].uid);
+                              //navigate to feedback page
+                              Navigator.of(context).pushReplacement(
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      ViewFeedback(muid: mentors[index].uid),
+                                ),
+                              );
                             },
                             child: Text('View Feedback'),
                           ),
