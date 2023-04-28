@@ -73,7 +73,6 @@ class _ViewReqUserState extends State<ViewReqUser> {
             letterSpacing: 1,
           ),
         ),
-
         centerTitle: true,
         elevation: 0,
       ),

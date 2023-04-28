@@ -21,7 +21,7 @@ class HomePages extends StatelessWidget {
         highlightColor: Colors.transparent,
         hoverColor: Colors.transparent,
       ),
-    debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false,
       home: const HomePage(),
     );
   }
@@ -316,68 +316,68 @@ class Page4 extends StatelessWidget {
               style: GoogleFonts.plusJakartaSans(fontSize: 24, color: Colors.black),
             ),
             Container(
-            child:  Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-    children: <Widget>[
-      Container(
-        decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                const Color(0xFF32526C),
-                Colors.lightBlue.shade200,
-              ],
-              begin: Alignment.centerLeft,
-              end: Alignment.centerRight,
-            ),
-            borderRadius: const BorderRadius.all(
-              Radius.circular(25.0),
-            ),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.pink.withOpacity(0.2),
-                spreadRadius: 4,
-                blurRadius: 10,
-                offset: Offset(0, 3),
-              )
-            ]
-        ),
-    child:ElevatedButton(
-    child: Text("Videos"),
-    onPressed: null,
-      style: ElevatedButton.styleFrom(fixedSize: const Size(150, 200),shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(25))),
-    ),),
-    SizedBox(width: 40),
-    Container(
-      decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              const Color(0xFF32526C),
-              Colors.lightBlue.shade200,
-            ],
-            begin: Alignment.centerLeft,
-            end: Alignment.centerRight,
-          ),
-          borderRadius: const BorderRadius.all(
-            Radius.circular(25.0),
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.pink.withOpacity(0.2),
-              spreadRadius: 4,
-              blurRadius: 10,
-              offset: Offset(0, 3),
-            )
-          ]
-      ),
-    child:ElevatedButton(
-    child: Text("Stories"),
-    onPressed: null,
-      style: ElevatedButton.styleFrom(fixedSize: const Size(150, 200),shape: RoundedRectangleBorder(
-    borderRadius: BorderRadius.circular(25))),
-    ),),
-    ],
-    ),
+              child:  Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Container(
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [
+                            const Color(0xFF32526C),
+                            Colors.lightBlue.shade200,
+                          ],
+                          begin: Alignment.centerLeft,
+                          end: Alignment.centerRight,
+                        ),
+                        borderRadius: const BorderRadius.all(
+                          Radius.circular(25.0),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.pink.withOpacity(0.2),
+                            spreadRadius: 4,
+                            blurRadius: 10,
+                            offset: Offset(0, 3),
+                          )
+                        ]
+                    ),
+                    child:ElevatedButton(
+                      child: Text("Videos"),
+                      onPressed: null,
+                      style: ElevatedButton.styleFrom(fixedSize: const Size(150, 200),shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(25))),
+                    ),),
+                  SizedBox(width: 40),
+                  Container(
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [
+                            const Color(0xFF32526C),
+                            Colors.lightBlue.shade200,
+                          ],
+                          begin: Alignment.centerLeft,
+                          end: Alignment.centerRight,
+                        ),
+                        borderRadius: const BorderRadius.all(
+                          Radius.circular(25.0),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.pink.withOpacity(0.2),
+                            spreadRadius: 4,
+                            blurRadius: 10,
+                            offset: Offset(0, 3),
+                          )
+                        ]
+                    ),
+                    child:ElevatedButton(
+                      child: Text("Stories"),
+                      onPressed: null,
+                      style: ElevatedButton.styleFrom(fixedSize: const Size(150, 200),shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(25))),
+                    ),),
+                ],
+              ),
             ),
 
           ],
@@ -411,14 +411,18 @@ Future<bool> checkChatRequestExists(String user_id) async {
 
 showAlertDialog(BuildContext context) {
   // Create button
-  Widget okButton = TextButton(onPressed: () => {HomePages()}, child: Text("OK"),);
+  Widget okButton = TextButton(onPressed: (){Navigator.of(context).push(
+    MaterialPageRoute(
+      builder: (context) => HomePage(),
+    ),
+  );}, child: Text("OK"),);
 
   // Create AlertDialog
   AlertDialog alert = AlertDialog(
     title: Text("Instructions"),
     content: Text("1. Create a chat request with description about your issue and selecting suitable tags.\n"
-                  "2. View chat Request to check your status.\n"
-                  "3. Once your status changes to accepted from pending, you may chat with your mentor."),
+        "2. View chat Request to check your status.\n"
+        "3. Once your status changes to accepted from pending, you may chat with your mentor."),
     actions: [
       okButton,
     ],

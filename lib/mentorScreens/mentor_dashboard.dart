@@ -109,7 +109,7 @@ Welcome Mentor""",
                         mentorLogout(context);
                         Navigator.of(context).push(
                           MaterialPageRoute(
-                            builder: (context) => HomePage(),
+                            builder: (context) => MentorLoginPage(),
                           ),
                         );
                       },

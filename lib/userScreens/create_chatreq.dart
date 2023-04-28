@@ -47,7 +47,6 @@ class _MyFormState extends State<MyForm> {
               letterSpacing: 1,
             ),
           ),
-
           centerTitle: true,
           elevation: 0,
         ),
