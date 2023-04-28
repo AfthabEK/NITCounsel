@@ -73,7 +73,6 @@ class _ViewReqUserState extends State<ViewReqUser> {
             letterSpacing: 1,
           ),
         ),
-
         centerTitle: true,
         elevation: 0,
       ),
@@ -113,13 +112,16 @@ class _ViewReqUserState extends State<ViewReqUser> {
                         ),
                         onTap: () {
                           //Navigate to home
-                          fetchAcceptedBy(FirebaseAuth.instance.currentUser!.uid
-                              .toString());
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => UserChatPage(id: muid),
-                            ),
-                          );
+                          if (chat.status == 'accepted') {
+                            fetchAcceptedBy(FirebaseAuth
+                                .instance.currentUser!.uid
+                                .toString());
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => UserChatPage(id: muid),
+                              ),
+                            );
+                          }
                         },
                       );
                     },

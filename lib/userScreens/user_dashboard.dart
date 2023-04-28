@@ -21,7 +21,7 @@ class HomePages extends StatelessWidget {
         highlightColor: Colors.transparent,
         hoverColor: Colors.transparent,
       ),
-    debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false,
       home: const HomePage(),
     );
   }
@@ -41,7 +41,6 @@ class _HomePageState extends State<HomePage> {
     const Page4(),
     MyForm(),
     ViewReqUser(),
-
   ];
   bool _canShowButton = true;
   void hideWidget() {
@@ -81,21 +80,21 @@ class _HomePageState extends State<HomePage> {
             },
             icon: pageIndex == 0
                 ? const Icon(
-              Icons.person,
-              color: Colors.white,
-              size: 35,
-            )
+                    Icons.person,
+                    color: Colors.white,
+                    size: 35,
+                  )
                 : const Icon(
-              Icons.person_outline,
-              color: Colors.white,
-              size: 35,
-            ),
+                    Icons.person_outline,
+                    color: Colors.white,
+                    size: 35,
+                  ),
           ),
           IconButton(
             enableFeedback: false,
             onPressed: () {
               checkChatRequestExists(
-                  FirebaseAuth.instance.currentUser!.uid.toString())
+                      FirebaseAuth.instance.currentUser!.uid.toString())
                   .then((value) {
                 if (value) {
                   //if chat request exists, then view the chat request
@@ -107,19 +106,18 @@ class _HomePageState extends State<HomePage> {
                   });
                 }
               });
-
             },
             icon: pageIndex == 1
                 ? const Icon(
-              Icons.add_comment,
-              color: Colors.white,
-              size: 35,
-            )
+                    Icons.add_comment,
+                    color: Colors.white,
+                    size: 35,
+                  )
                 : const Icon(
-              Icons.add_comment_outlined,
-              color: Colors.white,
-              size: 35,
-            ),
+                    Icons.add_comment_outlined,
+                    color: Colors.white,
+                    size: 35,
+                  ),
           ),
           IconButton(
             enableFeedback: false,
@@ -130,15 +128,15 @@ class _HomePageState extends State<HomePage> {
             },
             icon: pageIndex == 2
                 ? const Icon(
-              Icons.chat,
-              color: Colors.white,
-              size: 35,
-            )
+                    Icons.chat,
+                    color: Colors.white,
+                    size: 35,
+                  )
                 : const Icon(
-              Icons.chat_outlined,
-              color: Colors.white,
-              size: 35,
-            ),
+                    Icons.chat_outlined,
+                    color: Colors.white,
+                    size: 35,
+                  ),
           ),
         ],
       ),
@@ -213,192 +211,192 @@ class Page4 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: Scaffold(
-      appBar: AppBar(
-        title: Text("Self-Help Content"),
-        backgroundColor: const Color(0xFF32526C),
-        actions: <Widget>[
-          IconButton(icon: Icon(Icons.help),
-              onPressed: () => {showAlertDialog(context)}),
-        ],
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.miniStartFloat,
-      body: Center(
-        child:
-        ListView(
-          children: [
-            CarouselSlider(
-              items: [
-
-                //1st Image of Slider
-                Container(
-                  margin: EdgeInsets.all(6.0),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8.0),
-                    color: const Color(0xFF32526C),
-                    image: DecorationImage(
-                      image: NetworkImage(
-                          "https://th.bing.com/th/id/OIP.S7bBWFirlQiKyDGiYzOnLwHaFh?pid=ImgDet&rs=1"),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-
-                //2nd Image of Slider
-                Container(
-                  margin: EdgeInsets.all(6.0),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8.0),
-                    image: DecorationImage(
-                      image: NetworkImage(
-                          "https://quotefancy.com/media/wallpaper/3840x2160/9844-Friedrich-Nietzsche-Quote-You-have-your-way-I-have-my-way-As-for.jpg"),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-
-                //3rd Image of Slider
-                Container(
-                  margin: EdgeInsets.all(6.0),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8.0),
-                    image: DecorationImage(
-                      image: NetworkImage(
-                          "https://quotefancy.com/media/wallpaper/3840x2160/6297157-Mike-Moreno-Quote-Just-remember-you-are-not-alone-in-fact-you-are.jpg"),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-
-
-                //4th Image of Slider
-                // Container(
-                //   margin: EdgeInsets.all(6.0),
-                //   decoration: BoxDecoration(
-                //     borderRadius: BorderRadius.circular(8.0),
-                //     image: DecorationImage(
-                //       image: NetworkImage("ADD IMAGE URL HERE"),
-                //       fit: BoxFit.cover,
-                //     ),
-                //   ),
-                // ),
-
-                //5th Image of Slider
-                // Container(
-                //   margin: EdgeInsets.all(6.0),
-                //   decoration: BoxDecoration(
-                //     borderRadius: BorderRadius.circular(8.0),
-                //     image: DecorationImage(
-                //       image: NetworkImage("ADD IMAGE URL HERE"),
-                //       fit: BoxFit.cover,
-                //     ),
-                //   ),
-                // ),
-
-              ],
-
-              //Slider Container properties
-              options: CarouselOptions(
-                height: 240.0,
-                enlargeCenterPage: true,
-                autoPlay: true,
-                aspectRatio: 30 / 15,
-                autoPlayCurve: Curves.fastOutSlowIn,
-                enableInfiniteScroll: true,
-                autoPlayAnimationDuration: Duration(milliseconds: 500),
-                viewportFraction: 0.8,
-              ),
-            ),
-
-            Text(
-              textAlign: TextAlign.center,
-              "\nWelcome to NITCSupport\n",
-              style: GoogleFonts.plusJakartaSans(fontSize: 24, color: Colors.black),
-            ),
-            Container(
-            child:  Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-    children: <Widget>[
-      Container(
-        decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                const Color(0xFF32526C),
-                Colors.lightBlue.shade200,
-              ],
-              begin: Alignment.centerLeft,
-              end: Alignment.centerRight,
-            ),
-            borderRadius: const BorderRadius.all(
-              Radius.circular(25.0),
-            ),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.pink.withOpacity(0.2),
-                spreadRadius: 4,
-                blurRadius: 10,
-                offset: Offset(0, 3),
-              )
-            ]
-        ),
-    child:ElevatedButton(
-    child: Text("Videos"),
-    onPressed: null,
-      style: ElevatedButton.styleFrom(fixedSize: const Size(150, 200),shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(25))),
-    ),),
-    SizedBox(width: 40),
-    Container(
-      decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              const Color(0xFF32526C),
-              Colors.lightBlue.shade200,
-            ],
-            begin: Alignment.centerLeft,
-            end: Alignment.centerRight,
-          ),
-          borderRadius: const BorderRadius.all(
-            Radius.circular(25.0),
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.pink.withOpacity(0.2),
-              spreadRadius: 4,
-              blurRadius: 10,
-              offset: Offset(0, 3),
-            )
-          ]
-      ),
-    child:ElevatedButton(
-    child: Text("Stories"),
-    onPressed: null,
-      style: ElevatedButton.styleFrom(fixedSize: const Size(150, 200),shape: RoundedRectangleBorder(
-    borderRadius: BorderRadius.circular(25))),
-    ),),
-    ],
-    ),
-            ),
-
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("                            Welcome"),
+          backgroundColor: const Color(0xFF32526C),
+          actions: <Widget>[
+            IconButton(
+                icon: Icon(Icons.help),
+                onPressed: () => {showAlertDialog(context)}),
           ],
+        ),
+        floatingActionButtonLocation:
+            FloatingActionButtonLocation.miniStartFloat,
+        body: Center(
+          child: ListView(
+            children: [
+              CarouselSlider(
+                items: [
+                  //1st Image of Slider
+                  Container(
+                    margin: EdgeInsets.all(6.0),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8.0),
+                      color: const Color(0xFF32526C),
+                      image: DecorationImage(
+                        image: NetworkImage(
+                            "https://th.bing.com/th/id/OIP.S7bBWFirlQiKyDGiYzOnLwHaFh?pid=ImgDet&rs=1"),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
 
+                  //2nd Image of Slider
+                  Container(
+                    margin: EdgeInsets.all(6.0),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8.0),
+                      image: DecorationImage(
+                        image: NetworkImage(
+                            "https://quotefancy.com/media/wallpaper/3840x2160/9844-Friedrich-Nietzsche-Quote-You-have-your-way-I-have-my-way-As-for.jpg"),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+
+                  //3rd Image of Slider
+                  Container(
+                    margin: EdgeInsets.all(6.0),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8.0),
+                      image: DecorationImage(
+                        image: NetworkImage(
+                            "https://quotefancy.com/media/wallpaper/3840x2160/6297157-Mike-Moreno-Quote-Just-remember-you-are-not-alone-in-fact-you-are.jpg"),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+
+                  //4th Image of Slider
+                  // Container(
+                  //   margin: EdgeInsets.all(6.0),
+                  //   decoration: BoxDecoration(
+                  //     borderRadius: BorderRadius.circular(8.0),
+                  //     image: DecorationImage(
+                  //       image: NetworkImage("ADD IMAGE URL HERE"),
+                  //       fit: BoxFit.cover,
+                  //     ),
+                  //   ),
+                  // ),
+
+                  //5th Image of Slider
+                  // Container(
+                  //   margin: EdgeInsets.all(6.0),
+                  //   decoration: BoxDecoration(
+                  //     borderRadius: BorderRadius.circular(8.0),
+                  //     image: DecorationImage(
+                  //       image: NetworkImage("ADD IMAGE URL HERE"),
+                  //       fit: BoxFit.cover,
+                  //     ),
+                  //   ),
+                  // ),
+                ],
+
+                //Slider Container properties
+                options: CarouselOptions(
+                  height: 240.0,
+                  enlargeCenterPage: true,
+                  autoPlay: true,
+                  aspectRatio: 30 / 15,
+                  autoPlayCurve: Curves.fastOutSlowIn,
+                  enableInfiniteScroll: true,
+                  autoPlayAnimationDuration: Duration(milliseconds: 500),
+                  viewportFraction: 0.8,
+                ),
+              ),
+              Text(
+                textAlign: TextAlign.center,
+                "\nWelcome to NITCSupport\n",
+                style: GoogleFonts.plusJakartaSans(
+                    fontSize: 24, color: Colors.black),
+              ),
+              Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Container(
+                      decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [
+                              const Color(0xFF32526C),
+                              Colors.lightBlue.shade200,
+                            ],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          ),
+                          borderRadius: const BorderRadius.all(
+                            Radius.circular(25.0),
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.pink.withOpacity(0.2),
+                              spreadRadius: 4,
+                              blurRadius: 10,
+                              offset: Offset(0, 3),
+                            )
+                          ]),
+                      child: ElevatedButton(
+                        child: Text("Videos"),
+                        onPressed: null,
+                        style: ElevatedButton.styleFrom(
+                            fixedSize: const Size(150, 200),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(25))),
+                      ),
+                    ),
+                    SizedBox(width: 40),
+                    Container(
+                      decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [
+                              const Color(0xFF32526C),
+                              Colors.lightBlue.shade200,
+                            ],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          ),
+                          borderRadius: const BorderRadius.all(
+                            Radius.circular(25.0),
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.pink.withOpacity(0.2),
+                              spreadRadius: 4,
+                              blurRadius: 10,
+                              offset: Offset(0, 3),
+                            )
+                          ]),
+                      child: ElevatedButton(
+                        child: Text("Stories"),
+                        onPressed: null,
+                        style: ElevatedButton.styleFrom(
+                            fixedSize: const Size(150, 200),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(25))),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
-    ),
     );
   }
 }
-
 
 Future<bool> checkChatRequestExists(String user_id) async {
   try {
     // Create a reference to the 'chatRequests' collection in Firestore
     CollectionReference chatRequestsRef =
-    FirebaseFirestore.instance.collection('chatRequests');
+        FirebaseFirestore.instance.collection('chatRequests');
 
     // Query the collection to check if a document with the given user ID exists
     QuerySnapshot querySnapshot =
-    await chatRequestsRef.where('user_id', isEqualTo: user_id).get();
+        await chatRequestsRef.where('user_id', isEqualTo: user_id).get();
 
     // If the query snapshot contains any documents, it means the chat request exists
     return querySnapshot.docs.isNotEmpty;
@@ -411,14 +409,20 @@ Future<bool> checkChatRequestExists(String user_id) async {
 
 showAlertDialog(BuildContext context) {
   // Create button
-  Widget okButton = TextButton(onPressed: () => {HomePages()}, child: Text("OK"),);
+  Widget okButton = TextButton(
+    onPressed: () => {
+      //pop context
+    },
+    child: Text("OK"),
+  );
 
   // Create AlertDialog
   AlertDialog alert = AlertDialog(
     title: Text("Instructions"),
-    content: Text("1. Create a chat request with description about your issue and selecting suitable tags.\n"
-                  "2. View chat Request to check your status.\n"
-                  "3. Once your status changes to accepted from pending, you may chat with your mentor."),
+    content: Text(
+        "1. Create a chat request with description about your issue and selecting suitable tags.\n"
+        "2. View chat Request to check your status.\n"
+        "3. Once your status changes to accepted from pending, you may chat with your mentor."),
     actions: [
       okButton,
     ],

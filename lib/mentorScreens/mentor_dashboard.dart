@@ -4,9 +4,9 @@ import 'package:nitcsupport/mentorScreens/chatpage.dart';
 import '../userScreens/user_dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'view_feedback.dart';
+//import 'view_feedback.dart';
 import 'login_mentor.dart';
-import 'view_feedback.dart';
+import 'viewfeedback.dart';
 import 'mentorchatreq.dart';
 
 class MentorDashboard extends StatefulWidget {
@@ -26,15 +26,13 @@ class MentorDashboardState extends State<MentorDashboard> {
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
               gradient: LinearGradient(
-                begin: Alignment.topRight,
-                end: Alignment.bottomLeft,
-                colors: [
-                  const Color(0xFF32526C),
-                  Colors.lightBlue.shade200,
-
-                ],
-              )
-          ),
+            begin: Alignment.topRight,
+            end: Alignment.bottomLeft,
+            colors: [
+              const Color(0xFF32526C),
+              Colors.lightBlue.shade200,
+            ],
+          )),
           child: Column(
             children: [
               Container(
@@ -57,7 +55,8 @@ Welcome Mentor""",
                     TextButton(
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(
-                          const Color(0xFF32526C),),
+                          const Color(0xFF32526C),
+                        ),
                       ),
                       onPressed: () {
                         Navigator.of(context).push(
@@ -71,7 +70,8 @@ Welcome Mentor""",
                             horizontal: 20.0, vertical: 10.0),
                         child: Text(" View Chat Requests/ Chat ",
                             style: GoogleFonts.plusJakartaSans(
-                                fontSize: 18, color: Colors.lightBlue.shade200)),
+                                fontSize: 18,
+                                color: Colors.lightBlue.shade200)),
                       ),
                     ),
                     SizedBox(
@@ -80,7 +80,8 @@ Welcome Mentor""",
                     TextButton(
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(
-                          const Color(0xFF32526C),),
+                          const Color(0xFF32526C),
+                        ),
                       ),
                       onPressed: () {
                         Navigator.of(context).push(
@@ -94,7 +95,8 @@ Welcome Mentor""",
                             horizontal: 70.0, vertical: 10.0),
                         child: Text("View feedback",
                             style: GoogleFonts.plusJakartaSans(
-                                fontSize: 18, color: Colors.lightBlue.shade200)),
+                                fontSize: 18,
+                                color: Colors.lightBlue.shade200)),
                       ),
                     ),
                     SizedBox(
@@ -103,22 +105,27 @@ Welcome Mentor""",
                     TextButton(
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(
-                          const Color(0xFF32526C),),
+                          const Color(0xFF32526C),
+                        ),
                       ),
                       onPressed: () {
                         mentorLogout(context);
+
+                        Navigator.of(context).pop();
+                        /*
                         Navigator.of(context).push(
                           MaterialPageRoute(
                             builder: (context) => HomePage(),
                           ),
-                        );
+                        );*/
                       },
                       child: Padding(
                         padding: const EdgeInsets.symmetric(
                             horizontal: 100.0, vertical: 10.0),
                         child: Text("Log out",
                             style: GoogleFonts.plusJakartaSans(
-                                fontSize: 18, color: Colors.lightBlue.shade200)),
+                                fontSize: 18,
+                                color: Colors.lightBlue.shade200)),
                       ),
                     ),
                   ],
@@ -126,7 +133,8 @@ Welcome Mentor""",
               ),
             ],
           ),
-        ),),
+        ),
+      ),
     );
   }
 }
@@ -147,9 +155,7 @@ void mentorLogout(BuildContext context) async {
             actions: [
               TextButton(
                 child: Text('OK'),
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
+                onPressed: () {},
               ),
             ],
           );
