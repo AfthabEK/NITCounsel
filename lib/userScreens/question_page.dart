@@ -74,10 +74,10 @@ class _HomePageState extends State<HomePage> {
       questionid: '5',
       title: 'How many hostels are there inside the main campus of NITC?',
       options: {
-        '5': false,
-        '6': false,
-        '7': true,
+        '7': false,
         '8': false,
+        '9': true,
+        '10': false,
       },
     ),
     Question(

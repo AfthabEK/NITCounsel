@@ -203,7 +203,9 @@ class _FeedbackState extends State<Feedbacknew> {
       style: OutlinedButton.styleFrom(minimumSize: const Size(200, 50)),
       onPressed: () {
         _submitFeedback();
-        Navigator.of(context).popUntil((route) => route.isFirst);
+        //Navigator.of(context).popUntil((route) => route.isFirst);
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (context) => LoginPage()));
         //String description = _productDesController.text;
         //String user_id = FirebaseAuth.instance.currentUser!.uid;
       },

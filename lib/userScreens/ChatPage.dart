@@ -8,6 +8,7 @@ import '../comps/styles.dart';
 import '../comps/widgets.dart';
 import 'package:intl/intl.dart';
 import 'give_feedback.dart';
+import 'feedback_input.dart';
 
 class UserChatPage extends StatefulWidget {
   const UserChatPage({Key? key, required this.id}) : super(key: key);
@@ -48,7 +49,7 @@ class _ChatInitPageState extends State<UserChatPage> {
     setState(() {
       Navigator.of(context).push(
         MaterialPageRoute(
-          builder: (context) => (FeedbackPage(mentorUid: widget.id)),
+          builder: (context) => (Feedbacknew(mentorUid: widget.id)),
         ),
       );
     });
@@ -73,7 +74,6 @@ class _ChatInitPageState extends State<UserChatPage> {
                 setState(() {
                   _closeChat();
                 });
-                
               } else if (value == 'sendWarning') {}
             },
             itemBuilder: (BuildContext context) => [
