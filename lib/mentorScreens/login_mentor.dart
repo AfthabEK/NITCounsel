@@ -158,6 +158,8 @@ class MainPage extends StatelessWidget {
                                 //}
                                 // if userid is sgc and password is 12345678 login, else say wrong password or username
                                 if (Email == "sgc" && Password == "12345678") {
+                                  Email = "";
+                                  Password = "";
                                   Navigator.of(context).push(
                                     MaterialPageRoute(
                                       builder: (context) => AdminDashboard(),
@@ -218,7 +220,7 @@ class _MentorLoginPageState extends State<MentorLoginPage> {
   Future<void> _loginMentor(String email, String password) async {
     try {
       UserCredential userCredential =
-      await FirebaseAuth.instance.signInWithEmailAndPassword(
+          await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: email,
         password: password,
       );
@@ -320,7 +322,7 @@ class _MentorLoginPageState extends State<MentorLoginPage> {
                             ),
                             focusedBorder: UnderlineInputBorder(
                                 borderSide:
-                                BorderSide(color: Colors.grey.shade100)),
+                                    BorderSide(color: Colors.grey.shade100)),
                             labelText: "Email",
                             enabledBorder: InputBorder.none,
                             labelStyle: const TextStyle(color: Colors.grey)),
@@ -338,7 +340,7 @@ class _MentorLoginPageState extends State<MentorLoginPage> {
                             ),
                             focusedBorder: UnderlineInputBorder(
                                 borderSide:
-                                BorderSide(color: Colors.grey.shade100)),
+                                    BorderSide(color: Colors.grey.shade100)),
                             labelText: "Password",
                             enabledBorder: InputBorder.none,
                             labelStyle: const TextStyle(color: Colors.grey)),

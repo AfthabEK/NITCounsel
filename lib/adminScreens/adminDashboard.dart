@@ -56,7 +56,7 @@ Welcome SGC Admin""",
                           const Color(0xFF32526C)),
                     ),
                     onPressed: () {
-                      Navigator.of(context).pushReplacement(
+                      Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) => add_mentors(),
                         ),
@@ -83,7 +83,7 @@ Welcome SGC Admin""",
                           const Color(0xFF32526C)),
                     ),
                     onPressed: () {
-                      Navigator.of(context).pushReplacement(
+                      Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) => ViewMentors(),
                         ),
