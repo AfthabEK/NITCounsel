@@ -1,6 +1,6 @@
 # NITCsupport
 
-### This app is a platform that connects students who seek counselling with mentors who can guide them.Students can sign up for chat sessions based on the type of problem they are facing without having to disclose any information about their identity. Mentors appointed by the admin can chat with these students an guide them. The identity of neither the student, nor the mentor is revealed in this process
+This app is designed to provide a safe and anonymous platform for students seeking counseling. Through our app, students can connect with experienced mentors who are trained to help them work through a variety of problems. Students can sign up for chat sessions based on the type of problem they are facing, without having to reveal any personal information. Mentors appointed by the admin are available to chat with students and provide guidance. Both the student and mentor's identities remain anonymous throughout the process, ensuring complete privacy and confidentiality."
 
 
 
