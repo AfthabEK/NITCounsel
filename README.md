@@ -1,16 +1,6 @@
-# nitcsupport
+# NITCsupport
 
-A new Flutter project.
+### This app is a platform that connects students who seek counselling with mentors who can guide them.Students can sign up for chat sessions based on the type of problem they are facing without having to disclose any information about their identity. Mentors appointed by the admin can chat with these students an guide them. The identity of neither the student, nor the mentor is revealed in this process
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
