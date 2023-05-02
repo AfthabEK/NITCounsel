@@ -59,13 +59,12 @@ class _ChatInitPageState extends State<UserChatPage> {
     });
 
     // navigate to chat requests page
-    setState(() {
-      Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (context) => (Feedbacknew(mentorUid: widget.id, flag: flag)),
-        ),
-      );
-    });
+
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => (Feedbacknew(mentorUid: widget.id, flag: flag)),
+      ),
+    );
   }
 
   @override

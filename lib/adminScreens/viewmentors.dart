@@ -43,7 +43,7 @@ class _ViewMentorsState extends State<ViewMentors> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Mentors'),
-        backgroundColor: Colors.blue,
+        backgroundColor: Color(0xFF32526C),
       ),
       body: FutureBuilder<List<Mentor>>(
         future: fetchMentors(),

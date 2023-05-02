@@ -66,7 +66,8 @@ class _ChatRequestListScreenState extends State<ChatRequestListScreen> {
           bool isPending = chatRequest.status == 'pending';
           bool isClosed = chatRequest.status == 'closed';
 
-          if (isPending || (isAcceptedByMentor && !isClosed))
+          if (isPending) {
+            print("Pending");
             return Column(
               // show only  pending chats
 
@@ -76,9 +77,6 @@ class _ChatRequestListScreenState extends State<ChatRequestListScreen> {
                   subtitle: Text('Tags: ${chatRequest.tags.join(', ')}\n'
                       'Description: ${chatRequest.description}\n'
                       'Created At: ${chatRequest.createdAt.toString()}'),
-                  //trailing: Text('acceptedby: ${chatRequest.acceptedby}'),
-                  // Set tile coreateSlor to green if accepted by the same mentor
-                  //tileColor: isAcceptedByMentor ? Colors.green : null,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -123,6 +121,7 @@ class _ChatRequestListScreenState extends State<ChatRequestListScreen> {
                 Divider(),
               ],
             );
+          }
         },
       ),
     );
